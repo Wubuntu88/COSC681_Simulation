@@ -8,19 +8,44 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <string.h>
 #include <unordered_map>
-struct pair {
-    int choice;
-    std::string destination;
-};
+
+
 int main(int argc, const char * argv[]) {
     
-    std::unordered_map<std::string, pair> myMap;
-    pair p;
-    p.choice = 0;
-    p.destination = "b";
-    myMap["a"] = p;
-    std::cout << "a's choice: " << myMap["a"].choice << "\n";
-    std::cout << "a's destination: " << myMap["a"].destination << "\n";
+    std::unordered_map<std::string, std::string> myMap;
+    myMap["A0"] = "B";
+    myMap["A1"] = "A";
+    myMap["B0"] = "C";
+    myMap["B1"] = "B";
+    myMap["C0"] = "A";
+    myMap["C1"] = "D";
+    
+    std::string test = "001";
+    std::string current_state = "A";
+    std::string final_state = "D";
+    
+    for (int i = 0; i < test.length(); i++) {
+        std::string s = test.substr(i, 1);
+        
+        std::string key = s + current_state;
+        std::cout << key << "\n";
+    }
+    
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
