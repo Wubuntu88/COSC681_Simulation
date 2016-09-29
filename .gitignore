@@ -153,3 +153,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+######### DS_Store files (used by apple for information about a directory)
+*.DS_Store
