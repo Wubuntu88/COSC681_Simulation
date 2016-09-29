@@ -1,5 +1,5 @@
 //
-//  main.cpp
+//  StateTransitions.cpp
 //  HW01
 //
 //  Created by William Gillespie on 9/27/16.
