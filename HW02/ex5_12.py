@@ -55,20 +55,8 @@ fig = plt.figure()
 ax = fig.gca(projection='3d')
 ax.scatter(xs, ys, zs, c='g', marker='o', s=150)
 
-plt.title('Asymptotic Behavior as t -> ∞', fontsize=25)
+plt.title('Asymptotic Behavior as t -> inf', fontsize=25)
 ax.set_xlabel('X Label', fontsize=18)
 ax.set_ylabel('Y Label', fontsize=18)
 ax.set_zlabel('Z Label', fontsize=18)
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
