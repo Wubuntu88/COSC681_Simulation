@@ -70,7 +70,7 @@ plt.plot(the_ns, a, c='r', linewidth=3)
 plt.plot(the_ns, b, c='g', linewidth=3)
 plt.plot(the_ns, c, c='b', linewidth=3)
 plt.plot(the_ns, d, c='m', linewidth=3)
-plt.plot(the_ns, d, c='c', linewidth=3)
+plt.plot(the_ns, e, c='c', linewidth=3)
 
 # labels & titles
 plt.title("Opinion convergence", fontsize=30)
