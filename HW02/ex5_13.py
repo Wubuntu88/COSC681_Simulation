@@ -2,6 +2,21 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+
+
+def print_asymptotic_behaviour_given_dominant_eigenvalue(the_eigen_val):
+    if the_eigen_val > -.0001 or the_eigen_val < .0001:
+        print("Given |{0:.2f}| = 1; the system is stable and may converge to a non-zero equilibrium\n"
+              .format(the_eigen_val))
+    elif the_eigen_val > 1.0:
+        print("Given |{0:.2f}| > 1; the system is unstable and diverges to infinity\n"
+              .format(the_eigen_val))
+    elif the_eigen_val < 1.0:
+        print("Given |{0:.2f}| < 1; the system is stable and converges to the origin\n"
+              .format(the_eigen_val))
+    else:
+        print("Error, this code should not be reached\n")
+
 print("exercise 5.13")
 one_third = 1.0/3.0
 mtrx = np.matrix([[one_third, one_third, 0, 0, one_third],
@@ -36,6 +51,9 @@ index_of_dominant_eigenvalue = abs_val_eigenvalues.argmax()
 print("dominant eigenvalue: " +
       str(eigenvalues[index_of_dominant_eigenvalue]) + "\n")
 
+dom_eig_val = eigenvalues[index_of_dominant_eigenvalue]
+print_asymptotic_behaviour_given_dominant_eigenvalue(dom_eig_val)
+
 print("eigenvectors: \n" + str(eigenvectors) + "\n")
 
 eigenvectors_inverse = np.linalg.inv(eigenvectors)
@@ -54,8 +72,8 @@ for n in range(1, iterations + 1):
     lamdas_to_the_nth_power = [eigenval ** n for eigenval in eigenvalues]
     diagonal_lamdas = np.diag(lamdas_to_the_nth_power)
     w_n = eigenvectors * diagonal_lamdas * eigenvectors_inverse * initialOpinionMatrix
-    print("w at " + str(n))
-    print(w_n)
+    # print("w at " + str(n))
+    # print(w_n)
     a.append(w_n.item(0))
     b.append(w_n.item(1))
     c.append(w_n.item(2))
@@ -77,19 +95,3 @@ plt.title("Opinion convergence", fontsize=30)
 plt.xlabel("iterations", fontsize=18)
 plt.ylabel("opinion level", fontsize=18)
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

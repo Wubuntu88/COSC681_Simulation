@@ -35,7 +35,6 @@ for time in the_range:
     xs.append(x)
     ys.append(y)
 
-
 plt.plot(the_range, xs, c='blue', linewidth=5)
 plt.plot(the_range, ys, c='red', linewidth=5)
 plt.suptitle("Predator/Prey Population Fluctuations", fontsize=22)
