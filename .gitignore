@@ -153,3 +153,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# I added the following to ignore the .DS_Store files on the mac
+.DS_Store
