@@ -16,6 +16,7 @@ K = 1.0
 Dt = 1
 
 alpha = .5
+
 resource = 30
 zombie_goosies = 4.0
 zombies = 2.0
@@ -23,20 +24,18 @@ zombies = 2.0
 resources_pop = []
 zombie_goosies_pop = []
 zombies_pop = []
-stop_limit = 1300
+stop_limit = 300
 time_range = np.arange(start=0, stop=stop_limit + Dt, step=Dt)
 for t in time_range:
     resources_pop.append(resource)
     zombies_pop.append(zombies)
     zombie_goosies_pop.append(zombie_goosies)
-
-    # resource += r * resource * (1 - resource / 200) * Dt \
-    resource += 30 - \
-        (.1 * zombies + .05 * zombie_goosies)
+    # resource += r * resource * (1 - resource / 200) * Dt - \
+    resource += 30 - (.1 * zombies + .05 * zombie_goosies)
     if resource < 0:
         resource = 0
-    zombies += .001 * resource - .7
-    zombie_goosies += .002 * resource - 1.5
+    zombies += .001 * resource - .01 * zombies  # .7
+    zombie_goosies += .002 * resource - .01 * zombie_goosies  # 1.5
     print("change: " + str(r * resource * (1 - resource / 200) * Dt))
 
 plt.plot(time_range, resources_pop, linewidth=3, c='green')
