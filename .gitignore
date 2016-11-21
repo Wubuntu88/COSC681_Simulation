@@ -80,6 +80,9 @@ xcuserdata/
 *.idea/dynamic.xml
 *.idea/uiDesigner.xml
 
+# I added
+*.idea
+
 # Gradle:
 *.idea/gradle.xml
 *.idea/libraries
