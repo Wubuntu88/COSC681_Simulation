@@ -8,7 +8,7 @@ xvalues, yvalues = meshgrid(arange(0, 30, 0.1), arange(0, 14, 0.1))
 r = 0.5
 k = 10.0
 
-xdot = xvalues / xvalues
+xdot = np.ones(shape=xvalues.shape)
 ydot = r * yvalues * (1 - yvalues / k)
 
 streamplot(x=xvalues, y=yvalues, u=xdot, v=ydot)
