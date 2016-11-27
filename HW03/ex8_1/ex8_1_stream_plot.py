@@ -21,10 +21,13 @@ AND
 t_min, t_max = -3, 3
 x_min, x_max = -4, 2
 
+
 t_values, x_values = meshgrid(arange(t_min, t_max, 0.1), arange(x_min, x_max, 0.1))
+
 
 r = -0.5
 # r = 1
+# r = 2.0
 
 t_dot = np.ones(shape=t_values.shape)
 x_dot = r * x_values * (x_values + 1) - x_values
