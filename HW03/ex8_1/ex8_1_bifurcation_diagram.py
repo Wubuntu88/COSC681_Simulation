@@ -15,8 +15,6 @@ Draw a bifurcation diagram and determine what kind of bifurcation it is.
 Solutions to the system:
 x_eq1 is 0
 x_eq2 is 1/r - 1
-
-
 """
 
 
