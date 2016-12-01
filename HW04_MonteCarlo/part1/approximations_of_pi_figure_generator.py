@@ -2,8 +2,16 @@
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 import time
 import random
+'''
+This script performs repeated Monte Carlo simulations to approximate Pi.
+It runs two types of simulations: one using a bad random number generator and
+one using the built in random number generator for python.
+When viewing the plot, note that each approximation for a given iteration
+independent of the other approximations for different iterations.
+'''
 
 
 class Random0:
@@ -48,7 +56,7 @@ class GoodPiApproximator:
         for i in range(0, iterations + 1):
             x = random.random()
             y = random.random()
-            distance = np.sqrt(x ** 2 + y ** 2)
+            distance = x ** 2 + y ** 2
             items_inside_circle += 1 if distance <= self.radius else 0
         pi_approximation = (float(items_inside_circle) / iterations) * 4
         return pi_approximation
@@ -59,7 +67,7 @@ good_pi_approximator = GoodPiApproximator()
 
 LCG_approximations = []
 good_approximations = []
-iteration_range = 100
+iteration_range = 1000
 the_iterations = [n for n in range(1, iteration_range + 1)]
 
 for iteration in the_iterations:
@@ -67,17 +75,15 @@ for iteration in the_iterations:
     LCG_approximations.append(LCG_approximation_of_pi)
     good_approximation_of_pi = good_pi_approximator.approximate_pi(iterations=iteration)
     good_approximations.append(good_approximation_of_pi)
-'''
-last_LCG_approximation = LCG_approximations[-1]
-last_good_approximation = good_approximations[-1]
 
-print('results:')
-print('LCG approximation of pi after {0:.6f} iterations'.format(last_LCG_approximation))
-print('good approximation of pi after {0:.6f} iterations'.format(last_good_approximation))
-
-'''
 sns.tsplot(data=LCG_approximations, linewidth=2, color='red')
 sns.tsplot(data=good_approximations, linewidth=2, color='blue')
+
+dark_blue_patch = mpatches.Patch(color='red', label='using the random0 LCG RNG')
+indian_red_patch = mpatches.Patch(color='blue', label='using the built-in python RNG')
+black_patch = mpatches.Patch(color='black', label='PI')
+plt.legend(handles=[dark_blue_patch, indian_red_patch, black_patch],
+           loc='upper right')
 
 plt.xlabel('Nth Iteration', fontsize=26)
 plt.ylabel('Approximation of Pi', fontsize=26)
@@ -85,3 +91,4 @@ plt.title('Approximation of Pi vs. iterations used to calculate Pi', fontsize=32
 plt.xlim((0, max(the_iterations)))
 
 plt.show()
+
