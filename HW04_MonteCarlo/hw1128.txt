@@ -1,0 +1,66 @@
+HW 11/28/2016    COSC 681   FALL 2016
+Due 12/12/2016
+
+1. Write a program to calculate pi using Monte Carlo technique.
+
+Using the same algorithm (ratio of area of circle inscribed in square), obtain
+an estimate of pi.  Plot pi vs number of iterations. 
+
+We expect a rapid convergence to asymptotically approaching pi.
+
+Repeat the program using two different random number generators.  One should
+be a very poor random number generator. E.g. implement random0 from 
+https://en.wikipedia.org/wiki/Linear_congruential_generator
+You may wish to modify a, c, and m to get worse performance.
+
+The other random number generator should be a much better one. You don't have
+to implement this second random number generator, you can, for example, use
+java.util.Random.
+
+2. Using Monte Carlo technique, write a program to calculate the intersection 
+area of the following on the x-y plane:
+
+  - circle, radius 6, centered at (0, 0)
+  - circle, radius 4, centered at (3, 3)
+  - points less than the line y = -2 x + 7
+  
+Give a plot that shows the asymptotic approach to the solution vs iteration #.
+
+3. Luke Skywalker needs to shoot a projectile down a ventilation shaft of the
+DeathStar. The ventilation shaft is a cylinder with radius 0.5 and height 30 m. 
+The target is at the bottom of the 30m shaft; it is a circle centered at 
+(0, 0, -30) with radius = 0.1 meter.
+
+Luke's aim is perfect -- he can hit the opening of the shaft with the perfect
+lateral velocity to hit the target at the bottom of the shaft.
+To simplify the problem, you can assume that Luke hits the center of the
+top of the shaft with no lateral velocity: (x, y, z) = (0, 0, 0) and 
+(vx, vy, vz) = (0, 0, -15), in meters/second. In the absence of other factors,
+it will take 2 seconds for the projectile to go from the top of the shaft to
+the target.
+
+Unfortunately, there are random external gravitational fluctuations that 
+perturb Luke's projectiles in their vx and vy as they move down the shaft.
+
+Model the perturbation in vx by adding a factor with uniform distribution
+over the range [-0.05, +0.05). Use a similar distribution for the perturbation in
+vy.  Model the gravitational fluctuation by changing the perturbation amount
+every k time units. k is uniformly distributed over the range [0, 2].  For a given
+projectile, gravity can fluctuate multiple times before the projectile hits
+the bottom of the shaft (or a side of the shaft).
+
+As stated above, if there is no perturbation, a projectile will hit the target 
+in 2 seconds ( -15 * 2 = -30). That means probability is pretty good that there will
+be at least one change in velocity as the projectile moves down the shaft.
+To further simplify the simulation, assume the time step is 0.1 second.
+
+Run a Monte Carlo simulation of Luke's target shooting. Give plot(s) showing
+the projectile impacts at the bottom of the shaft (if a projectile hits the
+side of the shaft, indicate this with a mark on or outside the limit of the
+target.
+
+Answer this question:  How many shots will Luke have to take to have a 75% or
+better chance of hitting the target?
+
+Support your answer with the results of the simulation.
+  
