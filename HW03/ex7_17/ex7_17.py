@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+"""
+Note This calculates the Jacobian Matrix correctly, but I was not able to get it to
+solve for S and I.  It turns out that the equilibrium points are I = 0 and S = c (any constant).
+Perhaps S equaling any constant makes it difficult for Sympy to find.
+"""
+
 import sympy as sy
 from sympy.abc import a, b, S, I
 
@@ -8,6 +14,7 @@ X = sy.Matrix([-a*S*I,
 print("\nDiff eqs:\n" + str(X[0]) + "\n" + str(X[1]) + "\n")
 
 Y = sy.Matrix([S, I])
+#Y = sy.Matrix([I, S])
 print("variables: " + str(Y[0]) + ", " + str(Y[1]) + "\n")
 
 jacobian_matrix = X.jacobian(Y)
@@ -21,10 +28,13 @@ print("equilibrium points (x, y): \n" + str(solutions_to_print) + "\n")
 
 # Part 2: Calculate the Jacobian matrix at the equilibrium point
 # where x > 0 and y > 0.  (I will make a and b some concrete value)
-value_of_a = 0.5
-value_of_b = 2.0
+value_of_a = 1.0
+value_of_b = 1.0
 X = X.subs([(a, value_of_a), (b, value_of_b)])
 jacobian_matrix = X.jacobian(Y)
+
+print("Jacobian Matrix with a, b as literals: \n" + str(jacobian_matrix) + "\n")
+
 
 sols = sy.solve(X, Y)
 
