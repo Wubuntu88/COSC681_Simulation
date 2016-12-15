@@ -14,7 +14,6 @@ X = sy.Matrix([-a*S*I,
 print("\nDiff eqs:\n" + str(X[0]) + "\n" + str(X[1]) + "\n")
 
 Y = sy.Matrix([S, I])
-#Y = sy.Matrix([I, S])
 print("variables: " + str(Y[0]) + ", " + str(Y[1]) + "\n")
 
 jacobian_matrix = X.jacobian(Y)
