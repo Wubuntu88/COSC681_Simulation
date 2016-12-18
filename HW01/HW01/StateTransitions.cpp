@@ -5,7 +5,6 @@
 //  Created by William Gillespie on 9/27/16.
 //  Copyright © 2016 William Gillespie. All rights reserved.
 //
-
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
@@ -74,8 +73,6 @@ bool acceptSequence(std::string sequence,
     return false;
 }
 
-
-
 int main(int argc, const char * argv[]) {
     
     std::unordered_map<std::string, std::string> myMap = initMap();
@@ -95,16 +92,19 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
+program output:
+ Trace of Transitions for sequence: 001
+ A -> B -> C -> D
+ 
+ Trace of Transitions for sequence: 110101
+ A -> A -> A -> B -> B -> C -> D
+ 
+ for sequence: 110
+ Unable to reach the final state D; string not accepted.
+ 
+ for sequence: 0000
+ Unable to reach the final state D; string not accepted.
+ 
+ Program ended with exit code: 0
+*/
