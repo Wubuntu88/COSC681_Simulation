@@ -64,17 +64,15 @@ int main(int argc, const char * argv[]) {
     }
     
     double ratio = (double) inIntersection / (double) total;
-    std::cout << "ratio: " << ratio << "\n";
+    std::cout << "ratio (in subarea / in box): " << ratio << "\n";
     
     double area = ratio * (box.x_max - box.x_min) * (box.y_max - box.y_min);
     std::cout << "area: " << area << "\n";
-
-    /*
-    if (isInIntersection) {
-        std::cout << "x: " << random_x << ", y: " << random_y << " is in intersection\n";
-    } else {
-        std::cout << "x: " << random_x << ", y: " << random_y << " is not in intersection\n";
-    }
-     */
     return 0;
 }
+/*
+ Output of program:
+ ratio (in subarea / in box): 0.521855
+ area: 18.0346
+ Program ended with exit code: 0
+ */

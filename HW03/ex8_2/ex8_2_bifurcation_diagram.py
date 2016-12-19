@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 """
-Exercise 8.1
+Exercise 8.2
 Conduct a bifurcation analysis of the following dynamical system with parameter r:
 dx / dt = ax(1-x)(2x-1) + r(p-x)
 Note:
@@ -14,7 +14,6 @@ p = 0.5
 a = 1
 
 equation after substitution:
-
 dx / dt = x(1-x)(2x-1) + r(0.5-x)
 
 solutions in terms of x for equation:
@@ -26,7 +25,6 @@ x = 1/2
 x = 1/2 * (1 - sqrt(1 - 2*r))
 x = 1/2 * (sqrt(1 - 2*r) + 1)
 
-
 Answer:
 The critical threshold of r at which a bifurcation occurs is r = 1/2
 It is a super critical pitchfork bifurcation.
@@ -34,18 +32,14 @@ Super critical pitchfork bifurcations are when a stable equilibrium point forks
 into two stable equilibrium points and a third unstable equilibrium point.
 """
 
-
 def x_eq_0(the_domain):
     return np.array([0.5 for n in the_domain])
-
 
 def x_eq_1(the_domain):
     return 0.5 * (1 - np.sqrt(1 - 2 * the_domain))
 
-
 def x_eq_2(the_domain):
     return 0.5 * (np.sqrt(1 - 2 * the_domain) + 1)
-
 
 x_min, x_max = -2, 2
 y_min, y_max = -2, 3

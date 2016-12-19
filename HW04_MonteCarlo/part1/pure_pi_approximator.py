@@ -51,8 +51,10 @@ class GoodPiApproximator:
         pi_approximation = (float(items_inside_circle) / iterations) * 4
         return pi_approximation
 
+iterations = 1000
 try:
-    iterations = int(sys.argv[1])
+    if len(sys.argv) >= 2:
+        iterations = int(sys.argv[1])
 except ValueError:
     iterations = 1000
 
@@ -62,3 +64,10 @@ good_approximation = GoodPiApproximator().approximate_pi(iterations=iterations)
 print('results:')
 print('LCG approximation of pi after {0:d} iterations: {1:.6f}'.format(iterations, LCG_approximation))
 print('good approximation of pi after {0:d} iterations: {1:.6f}'.format(iterations, good_approximation))
+"""
+Output of program
+Williams-MacBook-Air:part1 Will$ python3 pure_pi_approximator.py 20000
+results:
+LCG approximation of pi after 20000 iterations: 3.149200
+good approximation of pi after 20000 iterations: 3.131400
+"""

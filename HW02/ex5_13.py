@@ -80,18 +80,28 @@ for n in range(1, iterations + 1):
     d.append(w_n.item(3))
     e.append(w_n.item(4))
 
-"""
-Plotting
-"""
+"""Plotting"""
 the_ns = list(range(1, iterations+1))
 plt.plot(the_ns, a, c='r', linewidth=3)
 plt.plot(the_ns, b, c='g', linewidth=3)
 plt.plot(the_ns, c, c='b', linewidth=3)
 plt.plot(the_ns, d, c='m', linewidth=3)
 plt.plot(the_ns, e, c='c', linewidth=3)
-
 # labels & titles
 plt.title("Opinion convergence", fontsize=30)
 plt.xlabel("iterations", fontsize=18)
 plt.ylabel("opinion level", fontsize=18)
 plt.show()
+"""
+Output of program
+exercise 5.13
+
+eigenvalues:
+[-0.20601133  0.53934466  1.          0.53934466 -0.20601133]
+
+absolute values of eigenvalues:
+[ 0.20601133  0.53934466  1.          0.53934466  0.20601133]
+
+dominant eigenvalue: 1.0
+Given |1.00| = 1; the system is stable and may converge to a non-zero equilibrium
+"""

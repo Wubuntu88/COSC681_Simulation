@@ -88,13 +88,15 @@ probability_of_success = float(successes) / failures
 print("Part 1: Calculate probability of success")
 print("P(success): {0:.4f}".format(probability_of_success))
 
-''' #remove comments to plot the figure
+#remove comments to plot the figure
 # Part 2
 plt.scatter(hits_xs, hits_ys, c="blue", s=30)
 plt.scatter(misses_xs, misses_ys, c="red", s=30)
 
 red_patch = mpatches.Patch(color='red', label='Misses or Wall Collisions')
 blue_patch = mpatches.Patch(color='blue', label='Hits')
+plt.legend(handles=[red_patch, blue_patch],
+           loc='upper right')
 
 
 plt.title("Luke's shots at the bottom of the shaft\n" +
@@ -104,7 +106,7 @@ plt.title("Luke's shots at the bottom of the shaft\n" +
 plt.xlabel("x", fontsize=16)
 plt.ylabel("y", fontsize=16)
 plt.show()
-'''
+
 
 # one output of program:
 # P(success): 0.0124
@@ -130,4 +132,3 @@ print("Number of shots to have a 75% chance or greater of hitting the target: {:
       .format(n_shots))
 # one output (for P(success) = 0.0124):
 # Number of shots to have a 75% chance or greater of hitting the target: 112
-

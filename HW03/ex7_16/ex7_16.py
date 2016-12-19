@@ -64,3 +64,33 @@ elif dominant_eigen_value < 0:
     print("because the dominant eigenvalue < 0, the equilibrium point is UNSTABLE")
 else:
     print("because the dominant eigenvalue == 0, the equilibrium point may be neutral")
+
+"""
+Output of program:
+ex7_16.py
+
+Diff eqs:
+r*x*y - x**2 - x
+y*(-y + 1)
+
+variables: x, y
+
+Jacobian Matrix with r as a symbolic variable:Matrix([[r*y - 2*x - 1, r*x], [0, -2*y + 1]])
+
+equilibrium points (x, y):
+[(-1, 0), (0, 0), (0, 1), (r - 1, 1)]
+
+solution(s) with x>0, y>0, r=4:
+[(3, 1)]
+
+Jacobian Matrix with r=4
+Matrix([[-2*x + 4*y - 1, 4*x], [0, -2*y + 1]])
+
+new matrix:
+Matrix([[-3, 12], [0, -1]])
+eigenvalues: {-3: 1, -1: 1}
+
+dominan eigen value: -3
+
+because the dominant eigenvalue < 0, the equilibrium point is UNSTABLE
+"""

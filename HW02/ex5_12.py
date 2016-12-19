@@ -80,3 +80,29 @@ ax.set_xlabel('X Label', fontsize=18)
 ax.set_ylabel('Y Label', fontsize=18)
 ax.set_zlabel('Z Label', fontsize=18)
 plt.show()
+"""
+Output of program:
+exercise 5.12
+matrix:
+[[ 1 -1  0]
+ [-1 -3  1]
+ [ 0  1  1]]
+
+eigenvalues:
+[-3.44948974  1.          1.44948974]
+
+absolute values of eigenvalues:
+[ 3.44948974  1.          1.44948974]
+
+dominant eigenvalue: -3.44948974278
+
+Given |-3.45| = 1; the system is stable and may converge to a non-zero equilibrium
+eigenvectors:
+[[  2.14186495e-01  -7.07106781e-01  -6.73887339e-01]
+ [  9.53020614e-01   1.33504240e-17   3.02905447e-01]
+ [ -2.14186495e-01  -7.07106781e-01   6.73887339e-01]]
+eigenvectors inverse:
+[[  2.14186495e-01   9.53020614e-01  -2.14186495e-01]
+ [ -7.07106781e-01  -6.57399882e-17  -7.07106781e-01]
+ [ -6.73887339e-01   3.02905447e-01   6.73887339e-01]]
+"""

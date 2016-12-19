@@ -52,5 +52,4 @@ resource_patch = mpatches.Patch(color='green', label='Resource')
 zombies_patch = mpatches.Patch(color='orange', label='Zombies')
 zombies_goosies_patch = mpatches.Patch(color='red', label='Zombie goosies')
 plt.legend(handles=[resource_patch, zombies_patch, zombies_goosies_patch], loc=1)
-
 plt.show()

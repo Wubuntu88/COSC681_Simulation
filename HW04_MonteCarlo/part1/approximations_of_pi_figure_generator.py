@@ -91,4 +91,3 @@ plt.title('Approximation of Pi vs. iterations used to calculate Pi', fontsize=32
 plt.xlim((0, max(the_iterations)))
 
 plt.show()
-

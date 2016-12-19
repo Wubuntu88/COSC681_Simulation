@@ -3,15 +3,15 @@
 from pylab import *
 import matplotlib.pyplot as plt
 
-xvalues, yvalues = meshgrid(arange(0, 30, 0.1), arange(0, 14, 0.1))
+x_values, y_values = meshgrid(arange(0, 30, 0.1), arange(0, 14, 0.1))
 
 r = 0.5
 k = 10.0
 
-xdot = np.ones(shape=xvalues.shape)
-ydot = r * yvalues * (1 - yvalues / k)
+x_dot = np.ones(shape=x_values.shape)
+y_dot = r * y_values * (1 - y_values / k)
 
-streamplot(x=xvalues, y=yvalues, u=xdot, v=ydot)
+streamplot(x=x_values, y=y_values, u=x_dot, v=y_dot)
 
 plt.xlabel("t", fontsize=20)
 plt.ylabel("x", fontsize=20)
